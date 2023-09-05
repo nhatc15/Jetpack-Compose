@@ -10,8 +10,8 @@ fun NavController.navigateToCategory(navOptions: NavOptions? = null) {
     navigate(route = Screen.Category.route, navOptions = navOptions)
 }
 
-fun NavGraphBuilder.categoryNavigation() {
+fun NavGraphBuilder.categoryNavigation(navigateToSearchScreen: () -> Unit) {
     composable(route = Screen.Category.route) {
-        CategoryScreen()
+        CategoryScreen(navigateToSearchScreen = { navigateToSearchScreen() })
     }
 }

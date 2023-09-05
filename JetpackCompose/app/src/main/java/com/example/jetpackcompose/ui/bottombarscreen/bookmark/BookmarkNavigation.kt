@@ -10,8 +10,8 @@ fun NavController.navigateToBookmark(navOptions: NavOptions? = null) {
     navigate(route = Screen.Bookmark.route, navOptions = navOptions)
 }
 
-fun NavGraphBuilder.bookmarkNavigation() {
+fun NavGraphBuilder.bookmarkNavigation(navigateToSearchScreen: () -> Unit) {
     composable(route = Screen.Bookmark.route) {
-        BookmarkScreen()
+        BookmarkScreen(navigateToSearchScreen = { navigateToSearchScreen() })
     }
 }

@@ -10,8 +10,8 @@ fun NavController.navigateToProfile(navOptions: NavOptions? = null) {
     navigate(route = Screen.Profile.route, navOptions = navOptions)
 }
 
-fun NavGraphBuilder.profileNavigation() {
+fun NavGraphBuilder.profileNavigation(navigateToSearchScreen: () -> Unit) {
     composable(route = Screen.Profile.route) {
-        ProfileScreen()
+        ProfileScreen(navigateToSearchScreen = { navigateToSearchScreen() })
     }
 }
