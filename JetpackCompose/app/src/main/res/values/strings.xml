@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Jetpack Compose</string>
+
+    //Bottom Bar
+    <string name="home">Home</string>
+    <string name="category">Category</string>
+    <string name="search">Search</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="profile">Profile</string>
+</resources>
