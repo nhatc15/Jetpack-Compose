@@ -5,6 +5,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.example.jetpackcompose.ui.main.component.TopBar
 
 @Composable
 fun HomeScreen(
@@ -12,6 +13,7 @@ fun HomeScreen(
     navigateToSearchScreen: () -> Unit
 ) {
     Column(modifier = modifier) {
+        TopBar(navigateToSearch = { navigateToSearchScreen() } )
         Text(text = "Home Screen")
         Button(onClick = { navigateToSearchScreen() }) {
             Text(text = "Search Screen")

@@ -23,9 +23,9 @@ fun MainNavHost(
         startDestination = Screen.Home.route
     ) {
         homeNavigation(navigateToSearchScreen = { navController.navigateToSearch() })
-        categoryNavigation()
-        searchNavigation()
-        bookmarkNavigation()
-        profileNavigation()
+        categoryNavigation(navigateToSearchScreen = { navController.navigateToSearch() })
+        searchNavigation(backButtonClick = { navController.popBackStack() })
+        bookmarkNavigation(navigateToSearchScreen = { navController.navigateToSearch() })
+        profileNavigation(navigateToSearchScreen = { navController.navigateToSearch() })
     }
 }

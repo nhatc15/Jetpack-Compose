@@ -7,6 +7,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -29,6 +32,12 @@ fun BottomNavigationBar(navController: NavController) {
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
+        var rootStack by remember {
+            mutableStateOf(Screen.Home.route)
+        }
+        if (items.any { it.route == currentRoute.toString() }) {
+            rootStack = currentRoute.toString()
+        }
         items.forEach { item ->
             BottomNavigationItem(
                 icon = { Icon(painter =  painterResource(id = item.icon), contentDescription = "") },
@@ -42,7 +51,7 @@ fun BottomNavigationBar(navController: NavController) {
                 selectedContentColor = Color.White,
                 unselectedContentColor = Color.Black.copy(0.4f),
                 alwaysShowLabel = false,
-                selected = currentRoute == item.route,
+                selected = rootStack == item.route,
                 onClick = {
                     navController.navigate(item.route) {
                         navController.graph.startDestinationRoute?.let { screen_route ->

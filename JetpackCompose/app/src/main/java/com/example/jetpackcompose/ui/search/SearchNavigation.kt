@@ -10,8 +10,8 @@ fun NavController.navigateToSearch(navOptions: NavOptions? = null) {
     navigate(route = Screen.Search.route, navOptions = navOptions)
 }
 
-fun NavGraphBuilder.searchNavigation() {
+fun NavGraphBuilder.searchNavigation(backButtonClick: () -> Unit) {
     composable(route = Screen.Search.route) {
-        SearchScreen()
+        SearchScreen(handlerBackClick = { backButtonClick() })
     }
 }
