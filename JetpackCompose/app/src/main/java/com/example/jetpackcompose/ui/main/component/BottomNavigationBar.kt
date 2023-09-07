@@ -40,7 +40,7 @@ fun BottomNavigationBar(navController: NavController) {
         }
         items.forEach { item ->
             BottomNavigationItem(
-                icon = { Icon(painter =  painterResource(id = item.icon), contentDescription = "") },
+                icon = { Icon(painter = painterResource(id = item.icon), contentDescription = "") },
                 label = {
                     Text(
                         text = stringResource(id = item.title),
@@ -53,9 +53,10 @@ fun BottomNavigationBar(navController: NavController) {
                 alwaysShowLabel = false,
                 selected = rootStack == item.route,
                 onClick = {
+                    rootStack = item.route
                     navController.navigate(item.route) {
-                        navController.graph.startDestinationRoute?.let { screen_route ->
-                            popUpTo(screen_route) {
+                        navController.graph.startDestinationRoute?.let { screenRoute ->
+                            popUpTo(screenRoute) {
                                 saveState = true
                             }
                         }

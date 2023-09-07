@@ -10,13 +10,14 @@ import com.example.jetpackcompose.ui.main.component.TopBar
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
-    navigateToSearchScreen: () -> Unit
+    navigateToSearchScreen: () -> Unit,
+    navigateToWebViewScreen: () -> Unit
 ) {
     Column(modifier = modifier) {
-        TopBar(navigateToSearch = { navigateToSearchScreen() } )
+        TopBar(navigateToSearch = { navigateToSearchScreen() })
         Text(text = "Home Screen")
-        Button(onClick = { navigateToSearchScreen() }) {
-            Text(text = "Search Screen")
+        Button(onClick = { navigateToWebViewScreen() }) {
+            Text(text = "Open WebView")
         }
     }
 }
