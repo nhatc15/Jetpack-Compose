@@ -26,6 +26,7 @@ fun SearchScreen(
         TopBar(
             focusRequester = focusRequester,
             isShowBackButton = true,
+            textFieldEnable = true,
             backButtonClick = { handlerBackClick() }
         )
         Text(text = "Search Screen")

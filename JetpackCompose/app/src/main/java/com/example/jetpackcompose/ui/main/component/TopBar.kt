@@ -31,6 +31,7 @@ fun TopBar(
     modifier: Modifier = Modifier,
     text: String = "",
     isShowBackButton: Boolean = false,
+    textFieldEnable: Boolean = false,
     navigateToSearch: () -> Unit = {},
     backButtonClick: () -> Unit = {},
     focusRequester: FocusRequester = FocusRequester()
@@ -65,7 +66,7 @@ fun TopBar(
             onValueChange = {
                 inputTextValue = it
             },
-            enabled = isShowBackButton,
+            enabled = textFieldEnable,
             placeholder = {
                 Text(
                     text = stringResource(id = R.string.top_bar_input_text_placeholder),
@@ -75,7 +76,7 @@ fun TopBar(
             leadingIcon = {
                 Icon(painter = painterResource(id = R.drawable.ic_search), contentDescription = "")
             },
-            maxLines = 1 ,
+            maxLines = 1,
             modifier = Modifier
                 .align(CenterVertically)
                 .weight(1f)
