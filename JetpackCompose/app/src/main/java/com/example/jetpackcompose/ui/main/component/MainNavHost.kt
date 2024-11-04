@@ -30,9 +30,6 @@ fun MainNavHost(
         searchNavigation()
         bookmarkNavigation()
         profileNavigation()
-        webViewNavigation(
-            backButtonClick = { navController.popBackStack() },
-            navigateToSearchScreen = { navController.navigateToSearch() }
-        )
+        webViewNavigation()
     }
 }

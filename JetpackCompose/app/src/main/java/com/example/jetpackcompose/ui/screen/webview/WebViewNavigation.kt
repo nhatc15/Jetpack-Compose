@@ -13,14 +13,8 @@ fun NavController.navigateToWebView() {
     }
 }
 
-fun NavGraphBuilder.webViewNavigation(
-    backButtonClick: () -> Unit,
-    navigateToSearchScreen: () -> Unit
-) {
+fun NavGraphBuilder.webViewNavigation() {
     composable(route = ScreenDestination.WEB_VIEW) {
-        WebViewScreen(
-            handlerBackClick = { backButtonClick() },
-            navigateToSearchScreen = { navigateToSearchScreen() }
-        )
+        WebViewScreen()
     }
 }
