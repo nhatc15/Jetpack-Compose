@@ -2,15 +2,13 @@ package com.example.jetpackcompose.ui.bottombarscreen.home
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.example.jetpackcompose.ui.common.Screen
+import com.example.jetpackcompose.ui.main.component.BottomBarItem
 
 fun NavGraphBuilder.homeNavigation(
-    navigateToSearchScreen: () -> Unit,
     navigateToWebViewScreen: () -> Unit
 ) {
-    composable(route = Screen.Home.route) {
+    composable(route = BottomBarItem.Home.route) {
         HomeScreen(
-            navigateToSearchScreen = { navigateToSearchScreen() },
             navigateToWebViewScreen = { navigateToWebViewScreen() }
         )
     }

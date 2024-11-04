@@ -16,15 +16,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.jetpackcompose.ui.common.Screen
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
     val items = listOf(
-        Screen.Home,
-        Screen.Category,
-        Screen.Bookmark,
-        Screen.Profile
+        BottomBarItem.Home,
+        BottomBarItem.Category,
+        BottomBarItem.Bookmark,
+        BottomBarItem.Profile
     )
     BottomNavigation(
         backgroundColor = MaterialTheme.colorScheme.primary,
@@ -33,7 +32,7 @@ fun BottomNavigationBar(navController: NavController) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
         var rootStack by remember {
-            mutableStateOf(Screen.Home.route)
+            mutableStateOf(BottomBarItem.Home.route)
         }
         if (items.any { it.route == currentRoute.toString() }) {
             rootStack = currentRoute.toString()

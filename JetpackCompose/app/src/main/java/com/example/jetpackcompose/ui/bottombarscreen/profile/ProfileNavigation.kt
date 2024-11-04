@@ -2,10 +2,10 @@ package com.example.jetpackcompose.ui.bottombarscreen.profile
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.example.jetpackcompose.ui.common.Screen
+import com.example.jetpackcompose.ui.main.component.BottomBarItem
 
-fun NavGraphBuilder.profileNavigation(navigateToSearchScreen: () -> Unit) {
-    composable(route = Screen.Profile.route) {
-        ProfileScreen(navigateToSearchScreen = { navigateToSearchScreen() })
+fun NavGraphBuilder.profileNavigation() {
+    composable(route = BottomBarItem.Profile.route) {
+        ProfileScreen()
     }
 }

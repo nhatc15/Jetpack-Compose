@@ -1,12 +1,12 @@
-package com.example.jetpackcompose.ui.webview
+package com.example.jetpackcompose.ui.screen.webview
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.example.jetpackcompose.ui.common.Screen
+import com.example.jetpackcompose.ui.main.component.ScreenDestination
 
 fun NavController.navigateToWebView() {
-    navigate(route = Screen.WebView.route) {
+    navigate(route = ScreenDestination.WEB_VIEW) {
         popUpTo(LoadingRoute) {
             saveState = true
         }
@@ -17,7 +17,7 @@ fun NavGraphBuilder.webViewNavigation(
     backButtonClick: () -> Unit,
     navigateToSearchScreen: () -> Unit
 ) {
-    composable(route = Screen.WebView.route) {
+    composable(route = ScreenDestination.WEB_VIEW) {
         WebViewScreen(
             handlerBackClick = { backButtonClick() },
             navigateToSearchScreen = { navigateToSearchScreen() }

@@ -8,11 +8,9 @@ import com.example.jetpackcompose.ui.main.component.TopBar
 
 @Composable
 fun CategoryScreen(
-    modifier: Modifier = Modifier,
-    navigateToSearchScreen: () -> Unit
+    modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
-        TopBar(navigateToSearch = { navigateToSearchScreen() } )
         Text(text = "Category Screen")
     }
 }

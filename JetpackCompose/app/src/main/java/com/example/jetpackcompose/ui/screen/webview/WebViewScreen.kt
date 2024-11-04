@@ -1,4 +1,4 @@
-package com.example.jetpackcompose.ui.webview
+package com.example.jetpackcompose.ui.screen.webview
 
 import android.view.ViewGroup
 import android.webkit.WebView
@@ -43,19 +43,5 @@ fun WebViewScreen(
         }
         loadUrl("https://www.google.com/")
     }
-
-    Column(modifier) {
-        TopBar(
-            isShowBackButton = true,
-            backButtonClick = {
-                if (webView.canGoBack()) {
-                    webView.goBack()
-                } else {
-                    handlerBackClick()
-                }
-            },
-            navigateToSearch = { navigateToSearchScreen() }
-        )
-        WebViewContent(webView = webView, isShowWebView = isShowWebView)
-    }
+    WebViewContent(webView = webView, isShowWebView = isShowWebView)
 }

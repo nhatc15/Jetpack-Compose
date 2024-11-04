@@ -25,7 +25,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.jetpackcompose.R
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopBar(
     modifier: Modifier = Modifier,
@@ -82,7 +81,9 @@ fun TopBar(
                 .weight(1f)
                 .focusRequester(focusRequester)
                 .clickable {
-                    navigateToSearch()
+                    if (!textFieldEnable) {
+                        navigateToSearch()
+                    }
                 }
 //                .onFocusChanged {
 //                    if (it.hasFocus) {
