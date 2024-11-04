@@ -1,4 +1,4 @@
-package com.example.jetpackcompose.ui.webview
+package com.example.jetpackcompose.ui.screen.webview
 
 import android.webkit.WebView
 import androidx.compose.foundation.layout.fillMaxSize

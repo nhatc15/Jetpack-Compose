@@ -4,15 +4,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.example.jetpackcompose.ui.main.component.TopBar
 
 @Composable
 fun CategoryScreen(
-    modifier: Modifier = Modifier,
-    navigateToSearchScreen: () -> Unit
+    modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
-        TopBar(navigateToSearch = { navigateToSearchScreen() } )
         Text(text = "Category Screen")
     }
 }
